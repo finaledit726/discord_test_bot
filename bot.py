@@ -90,10 +90,10 @@ V = 0.02
         for x in range(1):
             x = random.randint(1, 3)
             if x == 1:
-                await client.send_file(message.channel, '/home/owen/github/.git/discord_bot/pics/blush/blush1.gif')
+                await client.send_file(message.channel, 'https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush1.gif')
             elif x == 2:
-                await client.send_file(message.channel, '/home/owen/github/.git/discord_bot/pics/blush/blush2.gif')
+                await client.send_file(message.channel, 'https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush2.gif')
             elif x == 3:
-                await client.send_file(message.channel, '/home/owen/github/.git/discord_bot/pics/blush/blush3.gif')
+                await client.send_file(message.channel, 'https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush3.gif')
 
 client.run(os.getenv('TOKEN'))
