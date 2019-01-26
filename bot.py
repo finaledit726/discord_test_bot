@@ -5,6 +5,7 @@ import asyncio
 import time
 import typing
 import random
+import os
 
 Client = discord.Client()
 client = commands.Bot(command_prefix=" ")
@@ -93,5 +94,4 @@ async def on_message(message):
             elif x == 3:
                 await client.send_file(message.channel, '/home/owen/github/.git/discord_bot/pics/blush/blush3.gif')
 
-
-client.run("NTM3NjQ4OTM2Nzk4OTEyNTIy.Dyo3Zg.XqHb3RQi1PnYRpBj0ltLWfbGYxE")
+client.run(os.getenv('TOKEN'))
