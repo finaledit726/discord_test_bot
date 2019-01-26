@@ -16,7 +16,7 @@ def __init__(self):
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="use | !helpme | for help"))
+    await client.change_presence(game=discord.Game(name="use | !help | for help"))
     print("Bot is operational")
 
 @client.event
