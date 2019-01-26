@@ -4,6 +4,7 @@ from discord.ext import commands
 import asyncio
 import time
 import typing
+import os
 
 Client = discord.Client()
 bot_prefix = "!"
@@ -67,4 +68,4 @@ async def on_message(message):
     if message.content.upper().startswith("!RUN"):
         await client.send_file(message.channel, '/home/owen/Downloads/discord_test_bot-master/pics/run.gif')
 
-client.run("NTM3NjQ4OTM2Nzk4OTEyNTIy.Dyo3Zg.XqHb3RQi1PnYRpBj0ltLWfbGYxE")
+client.run(os.getenv('TOKEN'))
