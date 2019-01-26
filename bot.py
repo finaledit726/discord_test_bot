@@ -78,6 +78,8 @@ async def on_message(message):
 !blush - you're making me blush >///<
 
 !run - gotta run
+
+V = 0.02
 ```""")
 
     if message.content.upper().startswith("!RUN"):
