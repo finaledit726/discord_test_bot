@@ -8,12 +8,11 @@ import random
 import os
 
 Client = discord.Client()
-client = commands.Bot(command_prefix=" ")
-e = discord.Embed()
-
+client = commands.Bot(command_prefix="!")
 chat_filter = ["BAD_WORD", "FUCK", "N-WORD", "N_WORD", "FUCKING", "NIGGER", "BITCH", "CUNT", "BASTARD"] #bad words
 bypass_list = ["538501867269783564"] #list of roles or users how can say the bad words
-
+def __init__(self):
+    self.bot = discord.Client("205411115973214208")
 
 @client.event
 async def on_ready():
@@ -28,28 +27,6 @@ async def on_member_join(member):
 
 @client.event
 async def on_message(message):
-#hello usr
-    if message.content == "!hello":
-        userID = message.author.id
-        await client.send_message(message.channel, "<@%s> hello" % (userID))
-    if message.content == "!hi":
-        userID = message.author.id
-        await client.send_message(message.channel, "<@%s> hello" % (userID))
-#pingarooney
-    if message.content.upper().startswith("!PING"):
-        userID = message.author.id
-        await client.send_message(message.channel, "<@%s> Pong!" % (userID))
-#repeats what usr says
-    if message.content.upper().startswith("!ECHO"):
-        args = message.content.split(" ")
-        await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-#base of admin commands
-    if message.content.upper().startswith("!ABAN"):
-        if "494123972074668033" or "494125159372816385" in[role.id for role in message.author.roles]:
-            await client.send_message(message.channel, "feature not yet available")
-
-        else:
-            await client.send_message(message.channel, "you do not have permission to use this command")
 #message content filter
     await client.process_commands(message)
     contents = message.content.split(" ")
@@ -58,43 +35,113 @@ async def on_message(message):
             if not "538501867269783564" in[role.id for role in message.author.roles]:
                 await client.delete_message(message)
                 await client.send_message(message.channel, "That is a bad word, dont say it again >_<")
-    #pat command
-    if message.content.upper().startswith("!PAT"):
-        await client.send_message(message.channel, "**HEY** dont you dare put your filthy hands on me! >.<")
-    #help command
-    if message.content.upper().startswith("!HELPME"):
-        await client.send_message(message.channel, """```
-!sban - admin/moderator only command
-(more functionality to be added later)
 
-!pat - used to pat the bot & other users
-(more functionality to be added later)
+#hello usr
+@client.command()
+async def hello(self, ctx: discord.Member):
+    """
+    hello [usr] (currently broken)
+    """
+    userID = ctx.message.author
+    await client.say("<@%s> hello" % (userID))
+@client.command()
+async def hi(self, ctx: discord.Member):
+    """
+    hello [usr] (currently broken)
+    """
+    userID = ctx.message.author
+    await client.say("<@%s> hello" % (userID))
+#pingarooney
+@client.command()
+async def ping(self, ctx: discord.Member):
+    """
+    pong (currently broken)
+    """
+    userID = ctx.message.author
+    await client.say("<@%s> Pong!" % (userID))
+#repeats what usr says
+@client.command()
+async def echo():
+    """
+    repeats what is written after the command (currently broken)
+    """
+    args = message.content.split(" ")
+    await client.say("%s" % (" ".join(args[1:])))
 
-!echo - used to make the bot repeat what you type after the command
 
-!hi - say hi to the bot
+#admin commands
+@client.command() #kick command
+async def kick(ctx, member:discord.Member=None):
+    """
+    used to kick members (admin only)
+    """
 
-!hello - say hi to the bot
+    if "494123972074668033" or "494125159372816385" in[role.id for role in message.author.roles]:
+        if not member:
+            await ctx.send("Please specify a membmber")
+            return
+        await member.kick()
+        ctx.send(f"{member.mention} got kicked")
+    else:
+        ctx.send("You Don't Have Permission To Use This Command")
 
-!blush - you're making me blush >///<
+@client.command() #ban command
+async def ban(ctx, member:discord.Member=None):
+    """
+    used to ban members (admin only)
+    """
+    if "494123972074668033" or "494125159372816385" in[role.id for role in message.author.roles]:
+        if not member:
+            await ctx.send("Please specify a membmber")
+            return
+        await member.ban()
+        ctx.send(f"{member.mention} got banned")
+    else:
+        ctx.send("You Don't Have Permission To Use This Command")
 
-!run - gotta run
 
-V = 0.02
-```""")
+@client.command()  #pat command
+async def pat():
+    """
+    pat the bot or another usr (pat bot only available atm)
+    """
+    await client.say("**HEY** dont you dare put your filthy hands on me! >.<")
 
-    if message.content.upper().startswith("!RUN"):
-        await e.set_image(message.channel, url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/run/run1.gif')
 
+@client.command()
+async def blush():
+    """
+    you are making me blush >///<
+    """
+    for x in range(1):
+        x = random.randint(1, 3)
+        if x == 1:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://cdn.discordapp.com/attachments/499576648782315550/538758277417271297/blush1.gif')
+            await client.say(embed=emb)
+        elif x == 2:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://cdn.discordapp.com/attachments/494121558437265408/538487343477424193/blush2.gif')
+            await client.say(embed=emb)
+        elif x == 3:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://cdn.discordapp.com/attachments/493845493206745099/538687715601022986/blush3.gif')
+            await client.say(embed=emb)
 
-    if message.content.upper().startswith("!BLUSH"):
-        for x in range(1):
-            x = random.randint(1, 3)
-            if x == 1:
-                await e.set_image(message.channel, url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush1.gif')
-            elif x == 2:
-                await e.set_image(message.channel, url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush2.gif')
-            elif x == 3:
-                await e.set_image(message.channel, url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush3.gif')
+@client.command()
+async def run():
+    """
+    gotta run!
+    """
+    embed = discord.Embed(
+        colour = discord.Colour.green()
+    )
 
+    embed.set_image(url='https://i.imgur.com/ImoTCU3.gif')
+
+    await client.say(embed=embed)
+    
 client.run(os.getenv('TOKEN'))
