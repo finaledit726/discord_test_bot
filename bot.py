@@ -118,17 +118,17 @@ async def blush():
         if x == 1:
             emb = discord.Embed(colour = discord.Colour.green())
             emb.set_author(name='>///<')
-            emb.set_image(url='https://cdn.discordapp.com/attachments/499576648782315550/538758277417271297/blush1.gif')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush1.gif')
             await client.say(embed=emb)
         elif x == 2:
             emb = discord.Embed(colour = discord.Colour.green())
             emb.set_author(name='>///<')
-            emb.set_image(url='https://cdn.discordapp.com/attachments/494121558437265408/538487343477424193/blush2.gif')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush2.gif')
             await client.say(embed=emb)
         elif x == 3:
             emb = discord.Embed(colour = discord.Colour.green())
             emb.set_author(name='>///<')
-            emb.set_image(url='https://cdn.discordapp.com/attachments/493845493206745099/538687715601022986/blush3.gif')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush3.gif')
             await client.say(embed=emb)
 
 @client.command()
@@ -140,7 +140,7 @@ async def run():
         colour = discord.Colour.green()
     )
 
-    embed.set_image(url='https://i.imgur.com/ImoTCU3.gif')
+    embed.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/run/run1.gif')
 
     await client.say(embed=embed)
     
