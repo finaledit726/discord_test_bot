@@ -70,51 +70,63 @@ async def echo():
 
 
 #admin commands
-@client.command() #kick command
-async def kick(ctx, member:discord.Member=None):
+@client.command()  #kick command
+@commands.has_permissions(administrator=True)
+async def kick(ctx, member:discord.Member = None):
     """
-    used to kick members (admin only)
+    (admin command) kick [usr] (currently broken)
     """
-
-    if "494123972074668033" or "494125159372816385" in[role.id for role in message.author.roles]:
-        if not member:
-            await ctx.send("Please specify a membmber")
-            return
-        await member.kick()
-        ctx.send(f"{member.mention} got kicked")
-    else:
-        ctx.send("You Don't Have Permission To Use This Command")
+    if not member:
+        await ctx.send("Please specify a member")
+        return
+    await member.kick()
+    await ctx.send(f"{member.mention} got kicked")
+@kick.error
+async def kick_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send("You Don't Have Permission To Use This Command")
 
 @client.command() #ban command
-async def ban(ctx, member:discord.Member=None):
+@commands.has_permissions(administrator=True)
+async def ban(ctx, member:discord.Member = None):
     """
-    used to ban members (admin only)
+    (admin command) ban [usr] (currently broken)
     """
-    if "494123972074668033" or "494125159372816385" in[role.id for role in message.author.roles]:
-        if not member:
-            await ctx.send("Please specify a membmber")
-            return
-        await member.ban()
-        ctx.send(f"{member.mention} got banned")
-    else:
-        ctx.send("You Don't Have Permission To Use This Command")
+    if not member:
+        await ctx.send("Please specify a member")
+        return
+    await member.ban()
+    await ctx.send(f"{member.mention} got banned")
+@ban.error
+async def kick_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send("You Don't Have Permission To Use This Command")
 
 
 @client.command()  #pat command
-async def pat():
+async def pat(ctx, member:discord.Member = None):
     """
-    pat the bot or another usr (pat bot only available atm)
+    pat the bot or another usr (currently broken)
     """
-    await client.say("**HEY** dont you dare put your filthy hands on me! >.<")
+    if not member:
+        await ctx.send("**HEY** dont you dare put your filthy hands on me! >.<")
+        return
 
+    for x in range(1):
+        x = random.randint(1,1)
+        if x == 1:
+            pat = discord.Embed(colour = discord.Colour.green())
+            pat.set_author(name=f'{member.mention} got patted')
+            pat.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/pat/pat1.gif')
+            await ctx.send(embed=pat)
 
-@client.command()
+@client.command() #blush command
 async def blush():
     """
     you are making me blush >///<
     """
     for x in range(1):
-        x = random.randint(1, 3)
+        x = random.randint(1, 5)
         if x == 1:
             emb = discord.Embed(colour = discord.Colour.green())
             emb.set_author(name='>///<')
@@ -130,8 +142,22 @@ async def blush():
             emb.set_author(name='>///<')
             emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush3.gif')
             await client.say(embed=emb)
+        elif x == 4:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush4.gif')
+            await client.say(embed=emb)
+        elif x == 5:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush5.gif')
+            await client.say(embed=emb)
 
-@client.command()
+
+
+
+
+@client.command() #run command
 async def run():
     """
     gotta run!
