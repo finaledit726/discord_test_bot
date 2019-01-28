@@ -68,92 +68,7 @@ async def echo():
     args = message.content.split(" ")
     await client.say("%s" % (" ".join(args[1:])))
 
-
-#admin commands
-@client.command()  #kick command
-@commands.has_permissions(administrator=True)
-async def kick(ctx, member:discord.Member = None):
-    """
-    (admin command) kick [usr] (currently broken)
-    """
-    if not member:
-        await ctx.send("Please specify a member")
-        return
-    await member.kick()
-    await ctx.send(f"{member.mention} got kicked")
-@kick.error
-async def kick_error(ctx, error):
-    if isinstance(error, commands.CheckFailure):
-        await ctx.send("You Don't Have Permission To Use This Command")
-
-@client.command() #ban command
-@commands.has_permissions(administrator=True)
-async def ban(ctx, member:discord.Member = None):
-    """
-    (admin command) ban [usr] (currently broken)
-    """
-    if not member:
-        await ctx.send("Please specify a member")
-        return
-    await member.ban()
-    await ctx.send(f"{member.mention} got banned")
-@ban.error
-async def kick_error(ctx, error):
-    if isinstance(error, commands.CheckFailure):
-        await ctx.send("You Don't Have Permission To Use This Command")
-
-
-@client.command()  #pat command
-async def pat(ctx, member:discord.Member = None):
-    """
-    pat the bot or another usr (currently broken)
-    """
-    if not member:
-        await ctx.send("**HEY** dont you dare put your filthy hands on me! >.<")
-        return
-
-    for x in range(1):
-        x = random.randint(1,1)
-        if x == 1:
-            pat = discord.Embed(colour = discord.Colour.green())
-            pat.set_author(name=f'{member.mention} got patted')
-            pat.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/pat/pat1.gif')
-            await ctx.send(embed=pat)
-
-@client.command() #blush command
-async def blush():
-    """
-    you are making me blush >///<
-    """
-    for x in range(1):
-        x = random.randint(1, 5)
-        if x == 1:
-            emb = discord.Embed(colour = discord.Colour.green())
-            emb.set_author(name='>///<')
-            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush1.gif')
-            await client.say(embed=emb)
-        elif x == 2:
-            emb = discord.Embed(colour = discord.Colour.green())
-            emb.set_author(name='>///<')
-            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush2.gif')
-            await client.say(embed=emb)
-        elif x == 3:
-            emb = discord.Embed(colour = discord.Colour.green())
-            emb.set_author(name='>///<')
-            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush3.gif')
-            await client.say(embed=emb)
-        elif x == 4:
-            emb = discord.Embed(colour = discord.Colour.green())
-            emb.set_author(name='>///<')
-            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush4.gif')
-            await client.say(embed=emb)
-        elif x == 5:
-            emb = discord.Embed(colour = discord.Colour.green())
-            emb.set_author(name='>///<')
-            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush5.gif')
-            await client.say(embed=emb)
-
-
+    
 @client.command() #neko command(needs to be in cog!!)
 async def neko():
     """cute nekos >///< (36 different nekos)"""
@@ -306,6 +221,94 @@ async def neko():
             emb = discord.Embed(colour = discord.Colour.green())
             emb.set_image(url='https://cdn.nekos.life/neko/neko_212.jpg')
             await client.say(embed=emb)
+            
+            
+
+#admin commands
+@client.command()  #kick command
+@commands.has_permissions(administrator=True)
+async def kick(ctx, member:discord.Member = None):
+    """
+    (admin command) kick [usr] (currently broken)
+    """
+    if not member:
+        await ctx.send("Please specify a member")
+        return
+    await member.kick()
+    await ctx.send(f"{member.mention} got kicked")
+@kick.error
+async def kick_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send("You Don't Have Permission To Use This Command")
+
+@client.command() #ban command
+@commands.has_permissions(administrator=True)
+async def ban(ctx, member:discord.Member = None):
+    """
+    (admin command) ban [usr] (currently broken)
+    """
+    if not member:
+        await ctx.send("Please specify a member")
+        return
+    await member.ban()
+    await ctx.send(f"{member.mention} got banned")
+@ban.error
+async def kick_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send("You Don't Have Permission To Use This Command")
+
+
+@client.command()  #pat command
+async def pat(ctx, member:discord.Member = None):
+    """
+    pat the bot or another usr (currently broken)
+    """
+    if not member:
+        await ctx.send("**HEY** dont you dare put your filthy hands on me! >.<")
+        return
+
+    for x in range(1):
+        x = random.randint(1,1)
+        if x == 1:
+            pat = discord.Embed(colour = discord.Colour.green())
+            pat.set_author(name=f'{member.mention} got patted')
+            pat.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/pat/pat1.gif')
+            await ctx.send(embed=pat)
+
+@client.command() #blush command
+async def blush():
+    """
+    you are making me blush >///<
+    """
+    for x in range(1):
+        x = random.randint(1, 5)
+        if x == 1:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush1.gif')
+            await client.say(embed=emb)
+        elif x == 2:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush2.gif')
+            await client.say(embed=emb)
+        elif x == 3:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush3.gif')
+            await client.say(embed=emb)
+        elif x == 4:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush4.gif')
+            await client.say(embed=emb)
+        elif x == 5:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_author(name='>///<')
+            emb.set_image(url='https://github.com/finaledit726/discord_test_bot/blob/master/pics/blush/blush5.gif')
+            await client.say(embed=emb)
+
+
 
             
 
