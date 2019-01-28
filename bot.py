@@ -154,8 +154,160 @@ async def blush():
             await client.say(embed=emb)
 
 
+@client.command() #neko command(needs to be in cog!!)
+async def neko():
+    """cute nekos >///< (36 different nekos)"""
+    for n in range(1):
+        n = random.randint(1,36)
+        if n == 1:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_157.jpg')
+            await client.say(embed=emb)
+        if n == 2:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_158.jpg')
+            await client.say(embed=emb)
+        if n == 3:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_159.jpg')
+            await client.say(embed=emb)
+        if n == 4:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_160.jpg')
+            await client.say(embed=emb)
+        if n == 5:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_161.jpg')
+            await client.say(embed=emb)
+        if n == 6:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_165.jpg')
+            await client.say(embed=emb)
+        if n == 7:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_166.jpg')
+            await client.say(embed=emb)
+        if n == 8:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_167.jpg')
+            await client.say(embed=emb)
+        if n == 9:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_169.jpg')
+            await client.say(embed=emb)
+        if n == 10:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_170.jpg')
+            await client.say(embed=emb)
 
+        if n == 11:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_171.jpg')
+            await client.say(embed=emb)
+        if n == 12:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_172.jpg')
+            await client.say(embed=emb)
+        if n == 13:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_173.jpg')
+            await client.say(embed=emb)
+        if n == 14:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_174.jpg')
+            await client.say(embed=emb)
+        if n == 15:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_176.jpg')
+            await client.say(embed=emb)
+        if n == 16:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_179.jpg')
+            await client.say(embed=emb)
+        if n == 17:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_182.jpg')
+            await client.say(embed=emb)
+        if n == 18:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_183.jpg')
+            await client.say(embed=emb)
+        if n == 19:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_184.jpg')
+            await client.say(embed=emb)
+        if n == 20:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_185.jpg')
+            await client.say(embed=emb)
 
+        if n == 21:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_186.jpg')
+            await client.say(embed=emb)
+        if n == 22:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_187.jpg')
+            await client.say(embed=emb)
+        if n == 23:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_188.jpg')
+            await client.say(embed=emb)
+        if n == 24:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_189.jpg')
+            await client.say(embed=emb)
+        if n == 25:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_190.jpg')
+            await client.say(embed=emb)
+        if n == 26:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_191.jpg')
+            await client.say(embed=emb)
+        if n == 27:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_195.jpg')
+            await client.say(embed=emb)
+        if n == 28:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_196.jpg')
+            await client.say(embed=emb)
+        if n == 29:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_197.jpg')
+            await client.say(embed=emb)
+        if n == 30:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_198.jpg')
+            await client.say(embed=emb)
+
+        if n == 31:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_199.jpg')
+            await client.say(embed=emb)
+        if n == 32:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_200.jpg')
+            await client.say(embed=emb)
+        if n == 33:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_207.jpg')
+            await client.say(embed=emb)
+        if n == 34:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_209.jpg')
+            await client.say(embed=emb)
+        if n == 35:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_211.jpg')
+            await client.say(embed=emb)
+        if n == 36:
+            emb = discord.Embed(colour = discord.Colour.green())
+            emb.set_image(url='https://cdn.nekos.life/neko/neko_212.jpg')
+            await client.say(embed=emb)
+
+            
 
 @client.command() #run command
 async def run():
