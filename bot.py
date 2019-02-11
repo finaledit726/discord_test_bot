@@ -48,7 +48,7 @@ async def hello(self, ctx: discord.Member):
 @bot.command()
 async def hi(ctx):
     """
-    hello [usr] (currently broken)
+    hello [usr] (in development)
     """
     await bot.say("hello")
     
