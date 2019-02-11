@@ -52,10 +52,15 @@ async def hi(self, ctx: discord.Member):
     userID = ctx.message.author
     await client.say("<@%s> hello" % (userID))
 #pingarooney
-@client.command()
+@client.command(pass_context=True)
 async def ping(ctx):
     """Pong!"""
-    await ctx.send('Pong! {0}'.format(round(bot.latency, 1)))
+    now = datetime.datetime.utcnow()
+    delta = now-ctx.message.timestamp
+    await client.say('Pong! = {}ms'.format(delta(microseconds=1)))
+
+
+
     
 #repeats what usr says
 @client.command()
