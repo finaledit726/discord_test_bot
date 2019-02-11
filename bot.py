@@ -9,7 +9,7 @@ import os
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
-bot = commands.Bot(commands.when_mentioned)
+bot = commands.Bot(commands.when_mentioned_or('!'))
 chat_filter = ["BAD_WORD", "FUCK", "N-WORD", "N_WORD", "FUCKING", "NIGGER", "BITCH", "CUNT", "BASTARD"] #bad words
 bypass_list = ["538501867269783564"] #list of roles or users who can say the bad words
 def __init__(self):
