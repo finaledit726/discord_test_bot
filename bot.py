@@ -55,7 +55,7 @@ async def hi(self, ctx: discord.Member):
 @client.command()
 async def ping(ctx):
     """Pong!"""
-    await ctx.send("Pong! {0}".format(round(bot.latency, 1)))
+    await ctx.send('Pong! {0}'.format(round(bot.latency, 1)))
     
 #repeats what usr says
 @client.command()
