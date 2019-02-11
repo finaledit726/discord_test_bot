@@ -38,15 +38,8 @@ async def on_message(message):
                 await client.send_message(message.channel, "That is a bad word, dont say it again >_<")
 
 #hello usr
-
-
-
-
-
-   
-
 @bot.command()
-async def hi():
+async def hello():
     """
     hello [usr] (in development)
     """
