@@ -10,7 +10,7 @@ import os
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
 chat_filter = ["BAD_WORD", "FUCK", "N-WORD", "N_WORD", "FUCKING", "NIGGER", "BITCH", "CUNT", "BASTARD"] #bad words
-bypass_list = ["538501867269783564"] #list of roles or users how can say the bad words
+bypass_list = ["538501867269783564"] #list of roles or users who can say the bad words
 def __init__(self):
     self.bot = discord.Client("205411115973214208")
 
@@ -53,12 +53,10 @@ async def hi(self, ctx: discord.Member):
     await client.say("<@%s> hello" % (userID))
 #pingarooney
 @client.command()
-async def ping(self, ctx: discord.Member):
-    """
-    pong (currently broken)
-    """
-    userID = ctx.message.author
-    await client.say("<@%s> Pong!" % (userID))
+async def ping(ctx):
+    """Pong!"""
+    await ctx.send("Pong! {0}".format(round(bot.latency, 1)))
+    
 #repeats what usr says
 @client.command()
 async def echo():
