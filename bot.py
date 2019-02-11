@@ -9,6 +9,7 @@ import os
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
+bot = commands.Bot(commands.when_mentioned)
 chat_filter = ["BAD_WORD", "FUCK", "N-WORD", "N_WORD", "FUCKING", "NIGGER", "BITCH", "CUNT", "BASTARD"] #bad words
 bypass_list = ["538501867269783564"] #list of roles or users who can say the bad words
 def __init__(self):
@@ -44,13 +45,13 @@ async def hello(self, ctx: discord.Member):
     """
     userID = ctx.message.author
     await client.say("<@%s> hello" % (userID))
-@client.command()
-async def hi(self, ctx: discord.Member):
+@bot.command()
+async def hi(ctx):
     """
     hello [usr] (currently broken)
     """
-    userID = ctx.message.author
-    await client.say("<@%s> hello" % (userID))
+    await bot.say("hello")
+    
 #pingarooney
 @client.command(pass_context=True)
 async def ping(ctx):
