@@ -38,15 +38,15 @@ async def on_message(message):
                 await client.send_message(message.channel, "That is a bad word, dont say it again >_<")
 
 #hello usr
-@client.command()
-async def hello(self, ctx: discord.Member):
-    """
-    hello [usr] (currently broken)
-    """
-    userID = ctx.message.author
-    await client.say("<@%s> hello" % (userID))
+
+
+
+
+
+   
+
 @bot.command()
-async def hi(ctx):
+async def hi():
     """
     hello [usr] (in development)
     """
