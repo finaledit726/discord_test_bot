@@ -22,8 +22,8 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    role1 = discord.utils.get(member.server.roles, name='New_people')
-    role2 = discord.utils.get(member.server.roles, name='--------------------------')
+    role1 = discord.utils.get(member.guild.roles, name='New_people')
+    role2 = discord.utils.get(member.guild.roles, name='--------------------------')
     await client.add_roles(member, role1, role2)
 
 @client.event
@@ -34,8 +34,8 @@ async def on_message(message):
     for word in contents:
         if word.upper() in chat_filter:
             if not "538501867269783564" in[role.id for role in message.author.roles]:
-                await client.delete_message(message)
-                await client.send_message(message.channel, "That is a bad word, dont say it again >_<")
+                await message.delete(message)
+                await channel.send("That is a bad word, dont say it again >_<")
 
 #hello usr
 @bot.command()
