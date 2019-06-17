@@ -24,7 +24,7 @@ async def on_ready():
 async def on_member_join(member):
     role1 = discord.utils.get(member.guild.roles, name='New_people')
     role2 = discord.utils.get(member.guild.roles, name='--------------------------')
-    await client.add_roles(member, role1, role2)
+    await member.add_roles(member, role1, role2)
 
 @client.event
 async def on_message(message):
